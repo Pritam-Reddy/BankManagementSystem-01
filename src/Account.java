@@ -1,4 +1,3 @@
-// src/Account.java
 public class Account {
   private String accountNumber;
   private String customerName;

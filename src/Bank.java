@@ -11,8 +11,6 @@ public class Bank {
         this.transactionDAO = new TransactionDAOImpl(connection);
     }
 
-    // ... (rest of the Bank class methods) ...
-
     public void deleteAccount(String accountNumber) {
         try {
             accountDAO.deleteAccount(accountNumber);
