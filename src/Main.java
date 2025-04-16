@@ -21,7 +21,8 @@ public class Main {
                 System.out.println("4. Check Balance");
                 System.out.println("5. Display All Accounts");
                 System.out.println("6. Display Transactions for Account");
-                System.out.println("7. Exit");
+                System.out.println("7. Delete Account"); // Added this option
+                System.out.println("8. Exit");         // Changed exit option number
                 System.out.print("Enter your choice: ");
 
                 int choice = scanner.nextInt();
@@ -69,7 +70,12 @@ public class Main {
                         accountNumber = scanner.nextLine();
                         bank.displayTransactions(accountNumber);
                         break;
-                    case 7:
+                    case 7: // Handle delete account
+                        System.out.print("Enter Account Number to Delete: ");
+                        String accountNumberToDelete = scanner.nextLine();
+                        bank.deleteAccount(accountNumberToDelete);
+                        break;
+                    case 8: // Exit
                         System.out.println("Exiting Bank Management System. Goodbye!");
                         scanner.close();
                         return;

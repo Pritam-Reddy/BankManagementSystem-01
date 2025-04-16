@@ -1,15 +1,24 @@
-// src/Bank.java
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class Bank {
     private AccountDAO accountDAO;
-    private TransactionDAO transactionDAO; // Add TransactionDAO
+    private TransactionDAO transactionDAO;
 
     public Bank(Connection connection) {
         this.accountDAO = new AccountDAOImpl(connection);
-        this.transactionDAO = new TransactionDAOImpl(connection); // Initialize TransactionDAOImpl
+        this.transactionDAO = new TransactionDAOImpl(connection);
+    }
+
+    // ... (rest of the Bank class methods) ...
+
+    public void deleteAccount(String accountNumber) {
+        try {
+            accountDAO.deleteAccount(accountNumber);
+        } catch (SQLException e) {
+            System.err.println("Error deleting account: " + e.getMessage());
+        }
     }
 
     public void createAccount(String accountNumber, String customerName, double initialBalance, String accountType) {

@@ -61,7 +61,12 @@ public class AccountDAOImpl implements AccountDAO {
         String sql = "DELETE FROM accounts WHERE account_number = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, accountNumber);
-            statement.executeUpdate();
+            int rowsAffected = statement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Account with number " + accountNumber + " deleted successfully.");
+            } else {
+                System.out.println("Account with number " + accountNumber + " not found.");
+            }
         }
     }
 
