@@ -24,12 +24,7 @@ public class Account {
       return balance;
   }
 
-/*************  ✨ Windsurf Command ⭐  *************/
-  /**
-   * Gets the type of account.
-   * @return The account type. The possible values are "checking" and "savings".
-   */
-/*******  8de21db0-2463-4c77-bb89-643dd408fc0e  *******/
+
   public String getAccountType() {
       return accountType;
   }
